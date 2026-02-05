@@ -215,27 +215,27 @@ Using module zos_mvs_raw, develop an Ansible playbook to execute ICEMAN (DFSORT)
 
 Input record format:
 
-01-14 State name
-15-34 City name 
-35-36 State postal abbreviation
-37-43 City population 
+- 01-14 State name
+- 15-34 City name 
+- 35-36 State postal abbreviation
+- 37-43 City population 
 
 Output record format:
 
-01-02 State postal abbreviation 
-03-22 City name 
-23-30 City population 
+- 01-02 State postal abbreviation 
+- 03-22 City name 
+- 23-30 City population 
 
 ## Lab 28: Set up data sets for an application developer 
 
 A new software developer has joined your company. She will be working as a software engineer on a team that supports a mainframe-based product. She will need certain data sets created under her z/OS userid:
 
-<userid>.COBOL.SOURCE	
-<userid>.COBOL.COPYLIB	
-<userid>.REXX.SCRIPTS	
-<userid>.DEV.JCL		
-<userid>.QMF.SCRIPTS	
-<userid>.DEV.PROGLIB
+- <userid>.COBOL.SOURCE	
+- <userid>.COBOL.COPYLIB	
+- <userid>.REXX.SCRIPTS	
+- <userid>.DEV.JCL		
+- <userid>.QMF.SCRIPTS	
+- <userid>.DEV.PROGLIB
 
 All these are PDSE data sets (LIBRARY type). TEST.PROGLIB is a program library containing executables. The others are all source libraries and all contain 80-byte card-image records – same attributes.
 
@@ -243,13 +243,13 @@ Develop an Ansible playbook to create these data sets on the z/OS instance. You 
 
 For all except the program library, add a member after allocating the PDSE.
 
-Data Set            Member Name     Contents
+- Data Set            Member Name     Contents
 
-COBOL.SOURCE        README          COBOL SOURCE CODE GOES HERE
-COBOL.COPYLIB       README          COBOL COPYBOOKS GO HERE 
-REXX.SCRIPTS        README          REXX SCRIPTS GO HERE 
-QMF.SCRIPTS         README          SQL SCRIPTS FOR DB2 GO HERE 
-DEV.JCL             JOBCARD         (a JOB card with appropriate settings for the environment)
+- COBOL.SOURCE        README          COBOL SOURCE CODE GOES HERE
+- COBOL.COPYLIB       README          COBOL COPYBOOKS GO HERE 
+- REXX.SCRIPTS        README          REXX SCRIPTS GO HERE 
+- QMF.SCRIPTS         README          SQL SCRIPTS FOR DB2 GO HERE 
+- DEV.JCL             JOBCARD         (a JOB card with appropriate settings for the environment)
 
 Make good use of Ansible features such as loops and variables, and factor out repetitive tasks, to keep the playbook clean and understandable. That is the main point of the exercise - the technical details are already familiar to you by now.
 
